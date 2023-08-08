@@ -1,0 +1,12 @@
+body{
+    background-color: aquamarine;
+}
+
+.section {
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 1%;
+    width: 400px;
+    height: 200px;
+    border-radius: 15px;
+}

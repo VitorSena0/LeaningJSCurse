@@ -1,0 +1,13 @@
+body {
+    background-color: rgb(15, 111, 195);
+}
+
+.container{
+    background-color: #fff;
+    margin: 0 auto;
+    width: 40%;
+    border-radius: 15px ;
+    padding: 1%;
+    translate: 0% 20%;
+}
+
