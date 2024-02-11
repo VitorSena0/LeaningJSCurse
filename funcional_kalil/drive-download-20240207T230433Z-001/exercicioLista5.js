@@ -83,10 +83,17 @@ const contarCaracteres = (string) => string.replace(' ','').length
 
 /////////////////////////////////////////////////////////////
 
+
 const repete = (elem) => (repeticoes) => {
-  if (repeticoes === 0) {
-    return [];
-  } else {
-    return [elem, ...repete(elem)(repeticoes - 1)];
-  }
-};
+  if(repeticoes == 0) return [];
+  return  [...repete(elem)(repeticoes - 1), elem]
+}
+
+
+const replicaElem = (lista) => (repeticoes) => {
+  const [x,...xs] = lista;
+  if(x == undefined) return [];
+  return [...repete(x)(repeticoes),...replicaElem(xs)(repeticoes)]
+
+}
+console.log(replicaElem([1,2,3])(10))
