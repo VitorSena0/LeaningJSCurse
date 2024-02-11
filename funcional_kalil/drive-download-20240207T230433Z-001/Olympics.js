@@ -58,9 +58,7 @@ const calculaIdadeAux = (ano) => (dataNasc) => (milissegundosNoAno) => {
 const calculaIdadeAtletas = (listaDeAtletas) => (dataJogosRio) => (f_milissegundos) =>  {
 
   const milissegundosPorAno = 1000 * 60 * 60 * 24 * 365.25; // considerando os anos bissextos
-  return  listaDeAtletas.map((atleta)=>{ 
-      return {idade: f_milissegundos(dataJogosRio)(atleta.date_of_birth)(milissegundosPorAno).toFixed(2)}
-    });
+  return  listaDeAtletas.map((atleta)=>{return {idade: f_milissegundos(dataJogosRio)(atleta.date_of_birth)(milissegundosPorAno).toFixed(2)}});
 }
 // Calcula a média de todas as idades
 const calculaMediaIdades =(calculaIdadeAtletas) => (listaDeAtletas) => (dataJogosRio) => (calculaIdadeAux) => {

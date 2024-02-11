@@ -46,3 +46,11 @@ const numerosAleatorios = [
 
 const condicionais = (elem) => elem%2 == 0 && elem%5 == 0 && elem<1000
 const somaValoresMult = (lista) => lista.filter(condicionais).reduce( (acc,x) => acc + x, 0);
+//console.log(condicionais)
+
+///////////////////////////////////////////////////////////////
+const dezNaturais = [1,2,3,4,5,6,7,8,9,10] 
+const diferencaEntreQuadrados = (dezPrimeirosNaturais) => {
+  return (dezPrimeirosNaturais.reduce((acc, num)=> acc + num,0) ** 2) - dezPrimeirosNaturais.map((num)=> num**2).reduce((acc, num)=> acc + num,0)
+} 
+console.log(diferencaEntreQuadrados(dezNaturais));
