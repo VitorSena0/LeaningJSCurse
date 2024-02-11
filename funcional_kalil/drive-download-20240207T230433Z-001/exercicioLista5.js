@@ -44,13 +44,49 @@ const numerosAleatorios = [
     355, 976,  71, 522
   ]
 
-const condicionais = (elem) => elem%2 == 0 && elem%5 == 0 && elem<1000
-const somaValoresMult = (lista) => lista.filter(condicionais).reduce( (acc,x) => acc + x, 0);
-//console.log(condicionais)
+const condicionais = (elem) => elem%2 == 0 && elem%5 == 0 && elem<1000;
+const somaValoresMult = (lista) => (condicionais) => lista.filter(condicionais).reduce( (acc,x) => acc + x, 0);
+//console.log(somaValoresMult(numerosAleatorios)(condicionais));
 
-///////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
+
 const dezNaturais = [1,2,3,4,5,6,7,8,9,10] 
 const diferencaEntreQuadrados = (dezPrimeirosNaturais) => {
   return (dezPrimeirosNaturais.reduce((acc, num)=> acc + num,0) ** 2) - dezPrimeirosNaturais.map((num)=> num**2).reduce((acc, num)=> acc + num,0)
 } 
-console.log(diferencaEntreQuadrados(dezNaturais));
+//console.log(diferencaEntreQuadrados(dezNaturais));
+
+/////////////////////////////////////////////////////////////////
+
+const lenght_ = (lista) => {
+  const [x,...xs] = lista;
+  if(x == undefined) return 0;
+  return 1 + lenght_(xs);
+}
+
+const enumerarAte = (n) => {
+  if(n == 0) return []
+  return [...enumerarAte(n-1),n]
+}
+
+const listarDivisores = (num) => {
+  return (num <= 0)? [] : (enumerarAte(num)).filter((n)=> num % n == 0)
+}
+
+const ehPrimo = (num) =>  lenght_(listarDivisores(num)) == 2 || num == 1
+//console.log(ehPrimo(95))
+
+///////////////////////////////////////////////////////////////
+
+const contarCaracteres = (string) => string.replace(' ','').length
+//console.log(contarCaracteres("one hundred"))
+
+/////////////////////////////////////////////////////////////
+
+const repete = (elem) => (repeticoes) => {
+  if (repeticoes === 0) {
+    return [];
+  } else {
+    return [elem, ...repete(elem)(repeticoes - 1)];
+  }
+};
