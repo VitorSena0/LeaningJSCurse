@@ -15,10 +15,11 @@ const mostraHora = () => {
         hour12: false
     })
 }
-const intervalo = setInterval( function(){
+const intervalo = setInterval( ()=>{
     console.log(mostraHora())
 
 },1000)
+
 
 function paraHora(){
         clearInterval(intervalo)

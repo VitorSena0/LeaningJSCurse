@@ -129,6 +129,7 @@ for(let valores of delegacao){
 
 // Função geradora retornando função
 function* funcaoGeradora6(){
+    
     yield () => {
         console.log('yield retornando uma função');
     };

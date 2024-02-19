@@ -1,5 +1,5 @@
-function falaFrase(comeco){
-    function falaResto(resto){
+const falaFrase = (comeco) =>{
+    const falaResto = (resto) => {
         return console.log(comeco + ' ' + resto);
     }
     return falaResto;
@@ -20,11 +20,7 @@ console.log(Quadriplica(2))
 console.log("\n------------------------\n")
 
 // Utilidade 
-function criaMultiplicador(multiplicador){
-    return function multiplicacao (n) {
-        return n * multiplicador;
-    }
-}
+const criaMultiplicador = (multiplicador) => (n) => n * multiplicador;
 
 const Duplica2 = criaMultiplicador(2);
 const Triplica2 = criaMultiplicador(3);

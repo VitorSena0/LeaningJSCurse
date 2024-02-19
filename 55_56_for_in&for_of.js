@@ -10,10 +10,10 @@ for(let i = 0; i < array_frutas.length; i++){
 console.log('\n\n')
 // for of com array
 for(let indice of array_frutas){
-    console.log(indice)
+    console.log(`Elemento ${array_frutas.indexOf(indice)}: ${indice}`)
 }
 // for in com arrays
-for (let x in array_frutas) {
+for (let x in array_frutas) { // mostar os indices dos elementos
     console.log(x);
 }
 console.log('\n\n')
@@ -32,6 +32,6 @@ for (let chave in objeto_pessoa) {
 console.log('\n\n')
 
 // forEach com array
-array_frutas.forEach(function(element, indice, array) {
+array_frutas.forEach((element, indice, array) => {
     console.log(element, indice, array)
 });

@@ -7,7 +7,7 @@ function f1(callBack){
     setTimeout(function(){
         console.log('função1\n')
 
-        if(callBack) callBack();
+        if(callBack){ return console.log(callBack())}
         
     },valorAleatorio());
 }

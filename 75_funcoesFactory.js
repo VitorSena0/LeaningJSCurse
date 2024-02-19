@@ -10,7 +10,7 @@ function criaPessoa(nome, sobrenome,peso,altura) {
         // Setter
         set primeiroNovoNome(valor){
             valor = valor.split(' ');
-            this.nome = valor.shift()
+            this.nome = valor.shift();
             this.sobrenome = valor.join(' ')
             console.log(valor)
         },
