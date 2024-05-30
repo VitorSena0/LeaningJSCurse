@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exibir Script Externo</title>
+</head>
+<body>
+    <h1>Conteúdo do Script Externo</h1>
+    <pre id="script-content"></pre>
+
+    <script>
+        async function fetchScriptContent() {
+            try {
+                const response = await fetch('/85_map().js'); // Substitua 'script.js' pelo caminho do seu script externo
+                const scriptText = await response.text();
+                document.getElementById('script-content').textContent = scriptText;
+            } catch (error) {
+                console.error('Erro ao buscar o script:', error);
+            }
+        }
+
+        fetchScriptContent();
+    </script>
+    <script src="/85_map().js"></script>
+</body>
+</html>
